@@ -1,0 +1,247 @@
+/* About.css */
+
+/* Rest of your styles */
+#about {
+    padding: 50px;
+    text-align: center;
+    background-color: rgb(214, 214, 210);
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Montserrat', sans-serif;
+}
+
+#about h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #333;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#about h2:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(67, 66, 65, 0.3);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+
+.skills {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.image-container {
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skills h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    animation-name: titleAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes titleAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills li {
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.skills li:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.skills li::before {
+    content: "\2023";
+    margin-right: 8px;
+}
+
+.skills li:hover::before {
+    animation-name: rotateAnimation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+@keyframes moveInLine {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+.skills li {
+    font-size: 16px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.skills li:hover {
+    transform: translateY(-5px);
+}
+
+.skills li span {
+    margin-left: 10px;
+}
+
+.skills li svg {
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    .skills li {
+        font-size: 14px;
+    }
+
+    .skills li svg {
+        font-size: 24px;
+    }
+}
+
+
+
+#about {
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#about::before,
+#about::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    animation: moveObject 12s linear infinite;
+}
+
+#about::before {
+    top: -20px;
+    right: -20px;
+    left: auto;
+    background-color: rgba(249, 168, 37, 0.9);
+    animation-delay: 0s;
+}
+
+#about::after {
+    bottom: 70px;
+    left: 50px;
+    right: auto;
+    background-color: rgba(0, 184, 148, 0.9);
+    animation-delay: 6s;
+}
+
+@keyframes moveObject {
+    0% {
+        transform: translate(0, 0) rotate(0);
+    }
+
+    50% {
+        transform: translate(30px, 50px) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+.confirmation-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.success {
+    background-color: #c1e5c1;
+    color: #107c10;
+}
+
+.error {
+    background-color: #ffbcbc;
+    color: #c10e0e;
+}
